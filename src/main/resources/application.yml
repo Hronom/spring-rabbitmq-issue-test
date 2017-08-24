@@ -6,3 +6,7 @@ rabbit:
   port: 5672
   username: test
   password: test
+
+logging:
+  level:
+    root: DEBUG
