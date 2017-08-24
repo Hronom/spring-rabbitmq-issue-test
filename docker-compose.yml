@@ -1,0 +1,22 @@
+version: '2'
+services:
+  ##################################################################################################
+  ### RabbitMQ
+  geoword-rabbitmq:
+    image: rabbitmq:3.6.11-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=test
+      - RABBITMQ_DEFAULT_PASS=test
+    logging:
+      driver: json-file
+      options:
+        max-size: "250m"
+        max-file: "10"
+    networks:
+      - test-net
+
+networks:
+  test-net:
